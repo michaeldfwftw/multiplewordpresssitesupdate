@@ -1,0 +1,605 @@
+-- set user and pass for each site
+set site1usee to "user"
+set site2usee to "user"
+set site3usee to "user"
+set site4usee to "user"
+set site5usee to "user"
+set site6usee to "user"
+set site7usee to "user"
+set site8usee to "user"
+set site9usee to "user"
+set site1pass to "pass!"
+set site2pass to "pass!"
+set site3pass to "pass!"
+set site4pass to "pass!"
+set site5pass to "pass!"
+set site6pass to "pass!"
+set site7pass to "pass!"
+set site8pass to "pass!"
+set site9pass to "pass!"
+
+-- checkmain is used to determine if you are already logged into the site
+set checkmain to "Username or"
+-- test is set to the clipboard; this insures it begins with a value that fails the test, so that it must be changed to pass
+set test to "nadda"
+
+tell application "Firefox"
+	activate
+	delay 0.01
+	repeat while not frontmost
+	end repeat
+end tell
+delay 0.6
+tell application "System Events"
+	keystroke "n" using command down
+end tell
+delay 2
+tell application "Firefox"
+	-- long delays to insure sites are opened in the right tab-order
+	delay 2
+	
+	open location "https://site1/wp-admin"
+	
+	delay 1.5
+	open location "https://site2/wp-admin"
+	
+	delay 1.5
+	
+	open location "https://site3/wp-admin"
+	delay 1.5
+	open location "https://site4/wp-admin"
+	delay 1.5
+	
+	open location "https://site5/wp-admin"
+	delay 1.5
+	
+	
+	
+	open location "https://site6/wp-admin"
+	delay 2
+	open location "https://site7/wp-admin"
+	delay 1.5
+	open location "https://site8/wp-admin"
+	delay 1.5
+	open location "https://site9/wp-admin"
+	
+	delay 5
+	
+	
+end tell
+-- the rest of this script checks each page to determine if it is at the login screen; if not it moves on; if so logs into the site
+tell application "System Events"
+	keystroke "a" using command down
+	delay 0.5
+	keystroke "f" using command down
+	delay 0.5
+	keystroke "user"
+	delay 0.5
+	key code 53
+	delay 2
+	repeat 7 times
+		key code 124 using shift down
+		delay 0.2
+	end repeat
+	delay 1
+	keystroke "c" using {command down}
+	delay 2
+	set test to (the clipboard)
+	if test = checkmain then
+		
+		keystroke "a" using command down
+		delay 0.5
+		keystroke "f" using command down
+		delay 0.5
+		keystroke "user"
+		delay 0.5
+		key code 53
+		delay 0.1
+		keystroke tab
+		delay 1.5
+		
+		keystroke site1usee
+		delay 1.5
+		
+		delay 0.5
+		keystroke tab
+		repeat 14 times
+			key code 51
+			delay 0.01
+		end repeat
+		keystroke site1pass
+		delay 0.5
+		
+		repeat 3 times
+			
+			keystroke return
+			
+			delay 0.01
+			
+		end repeat
+	end if
+	-- again setting a value to test so that it has to change to pass next test
+	set test to "funk"
+	keystroke tab using {control down, shift down}
+	
+	
+	
+	delay 0.5
+	
+	
+	
+	
+	
+	keystroke "a" using command down
+	delay 0.5
+	keystroke "f" using command down
+	delay 0.5
+	keystroke "user"
+	delay 0.5
+	key code 53
+	delay 2
+	repeat 7 times
+		key code 124 using shift down
+		delay 0.2
+	end repeat
+	delay 1
+	keystroke "c" using {command down}
+	delay 2
+	set test to (the clipboard)
+	if test = checkmain then
+		
+		keystroke "a" using command down
+		delay 0.5
+		keystroke "f" using command down
+		delay 0.5
+		keystroke "user"
+		delay 0.5
+		key code 53
+		delay 0.1
+		keystroke tab
+		delay 1.5
+		
+		keystroke site2usee
+		delay 1.5
+		
+		delay 0.5
+		keystroke tab
+		repeat 14 times
+			key code 51
+			delay 0.01
+		end repeat
+		keystroke site2pass
+		delay 0.5
+		
+		repeat 3 times
+			
+			keystroke return
+			
+			delay 0.01
+			
+		end repeat
+	end if
+	set test to "funk"
+	keystroke tab using {control down, shift down}
+	
+	
+	delay 0.5
+	
+	
+	
+	keystroke "a" using command down
+	delay 0.5
+	keystroke "f" using command down
+	delay 0.5
+	keystroke "user"
+	delay 0.5
+	key code 53
+	delay 2
+	repeat 7 times
+		key code 124 using shift down
+		delay 0.2
+	end repeat
+	delay 1
+	keystroke "c" using {command down}
+	delay 2
+	set test to (the clipboard)
+	if test = checkmain then
+		
+		keystroke "a" using command down
+		delay 0.5
+		keystroke "f" using command down
+		delay 0.5
+		keystroke "user"
+		delay 0.5
+		key code 53
+		delay 0.1
+		keystroke tab
+		delay 1.5
+		
+		keystroke site3usee
+		delay 1.5
+		
+		delay 0.5
+		keystroke tab
+		repeat 14 times
+			key code 51
+			delay 0.01
+		end repeat
+		keystroke site3pass
+		delay 0.5
+		
+		repeat 3 times
+			
+			keystroke return
+			
+			delay 0.01
+			
+		end repeat
+	end if
+	set test to "funk"
+	keystroke tab using {control down, shift down}
+	
+	
+	delay 0.5
+	
+	
+	
+	keystroke "a" using command down
+	delay 0.5
+	keystroke "f" using command down
+	delay 0.5
+	keystroke "user"
+	delay 0.5
+	key code 53
+	delay 2
+	repeat 7 times
+		key code 124 using shift down
+		delay 0.2
+	end repeat
+	delay 1
+	keystroke "c" using {command down}
+	delay 2
+	set test to (the clipboard)
+	if test = checkmain then
+		
+		keystroke "a" using command down
+		delay 0.5
+		keystroke "f" using command down
+		delay 0.5
+		keystroke "user"
+		delay 0.5
+		key code 53
+		delay 0.1
+		keystroke tab
+		delay 1.5
+		
+		keystroke site4usee
+		delay 1.5
+		
+		delay 0.5
+		keystroke tab
+		repeat 14 times
+			key code 51
+			delay 0.01
+		end repeat
+		keystroke site4pass
+		delay 0.5
+		
+		repeat 3 times
+			
+			keystroke tab
+			
+			delay 0.01
+			
+		end repeat
+		delay 0.01
+		keystroke return
+	end if
+	set test to "funk"
+	keystroke tab using {control down, shift down}
+	
+	
+	delay 0.5
+	
+	
+	
+	
+	keystroke "a" using command down
+	delay 0.5
+	keystroke "f" using command down
+	delay 0.5
+	keystroke "user"
+	delay 0.5
+	key code 53
+	delay 2
+	repeat 7 times
+		key code 124 using shift down
+		delay 0.2
+	end repeat
+	delay 1
+	keystroke "c" using {command down}
+	delay 2
+	set test to (the clipboard)
+	if test = checkmain then
+		
+		keystroke "a" using command down
+		delay 0.5
+		keystroke "f" using command down
+		delay 0.5
+		keystroke "user"
+		delay 0.5
+		key code 53
+		delay 0.1
+		keystroke tab
+		delay 1.5
+		
+		keystroke site5usee
+		delay 1.5
+		
+		delay 0.5
+		keystroke tab
+		repeat 14 times
+			key code 51
+			delay 0.01
+		end repeat
+		keystroke site5pass
+		delay 0.5
+		
+		repeat 3 times
+			
+			keystroke tab
+			
+			delay 0.01
+			
+		end repeat
+		delay 0.01
+		keystroke return
+	end if
+	set test to "funk"
+	keystroke tab using {control down, shift down}
+	
+	
+	delay 0.5
+	
+	
+	
+	
+	keystroke "a" using command down
+	delay 0.5
+	keystroke "f" using command down
+	delay 0.5
+	keystroke "user"
+	delay 0.5
+	key code 53
+	delay 2
+	repeat 7 times
+		key code 124 using shift down
+		delay 0.2
+	end repeat
+	delay 1
+	keystroke "c" using {command down}
+	delay 2
+	set test to (the clipboard)
+	if test = checkmain then
+		
+		keystroke "a" using command down
+		delay 0.5
+		keystroke "f" using command down
+		delay 0.5
+		keystroke "user"
+		delay 0.5
+		key code 53
+		delay 0.1
+		keystroke tab
+		delay 1.5
+		
+		keystroke site6usee
+		delay 1.5
+		
+		delay 0.5
+		keystroke tab
+		repeat 14 times
+			key code 51
+			delay 0.01
+		end repeat
+		keystroke site6pass
+		delay 0.5
+		
+		repeat 3 times
+			
+			keystroke tab
+			
+			delay 0.01
+			
+		end repeat
+		delay 0.01
+		keystroke return
+	end if
+	set test to "funk"
+	keystroke tab using {control down, shift down}
+	
+	
+	delay 0.5
+	
+	
+	
+	
+	keystroke "a" using command down
+	delay 0.5
+	keystroke "f" using command down
+	delay 0.5
+	keystroke "user"
+	delay 0.5
+	key code 53
+	delay 2
+	repeat 7 times
+		key code 124 using shift down
+		delay 0.2
+	end repeat
+	delay 1
+	keystroke "c" using {command down}
+	delay 2
+	set test to (the clipboard)
+	if test = checkmain then
+		
+		keystroke "a" using command down
+		delay 0.5
+		keystroke "f" using command down
+		delay 0.5
+		keystroke "user"
+		delay 0.5
+		key code 53
+		delay 0.1
+		keystroke tab
+		delay 1.5
+		
+		keystroke site7usee
+		delay 1.5
+		
+		delay 0.5
+		keystroke tab
+		repeat 14 times
+			key code 51
+			delay 0.01
+		end repeat
+		keystroke site7pass
+		delay 0.5
+		
+		repeat 3 times
+			
+			keystroke tab
+			
+			delay 0.01
+			
+		end repeat
+		delay 0.01
+		keystroke return
+	end if
+	set test to "funk"
+	keystroke tab using {control down, shift down}
+	
+	
+	delay 0.5
+	
+	
+	
+	
+	keystroke "a" using command down
+	delay 0.5
+	keystroke "f" using command down
+	delay 0.5
+	keystroke "user"
+	delay 0.5
+	key code 53
+	delay 2
+	repeat 7 times
+		key code 124 using shift down
+		delay 0.2
+	end repeat
+	delay 1
+	keystroke "c" using {command down}
+	delay 2
+	set test to (the clipboard)
+	if test = checkmain then
+		
+		keystroke "a" using command down
+		delay 0.5
+		keystroke "f" using command down
+		delay 0.5
+		keystroke "user"
+		delay 0.5
+		key code 53
+		delay 0.1
+		keystroke tab
+		delay 1.5
+		
+		keystroke site8usee
+		delay 1.5
+		
+		delay 0.5
+		keystroke tab
+		repeat 14 times
+			key code 51
+			delay 0.01
+		end repeat
+		keystroke site8pass
+		delay 0.5
+		
+		repeat 3 times
+			
+			keystroke tab
+			
+			delay 0.01
+			
+		end repeat
+		delay 0.01
+		keystroke return
+	end if
+	set test to "funk"
+	keystroke tab using {control down, shift down}
+	
+	
+	delay 0.5
+	
+	
+	
+	
+	keystroke "a" using command down
+	delay 0.5
+	keystroke "f" using command down
+	delay 0.5
+	keystroke "user"
+	delay 0.5
+	key code 53
+	delay 2
+	repeat 7 times
+		key code 124 using shift down
+		delay 0.2
+	end repeat
+	delay 1
+	keystroke "c" using {command down}
+	delay 2
+	set test to (the clipboard)
+	if test = checkmain then
+		
+		keystroke "a" using command down
+		delay 0.5
+		keystroke "f" using command down
+		delay 0.5
+		keystroke "user"
+		delay 0.5
+		key code 53
+		delay 0.1
+		keystroke tab
+		delay 1.5
+		
+		keystroke site9usee
+		delay 1.5
+		
+		delay 0.5
+		keystroke tab
+		repeat 14 times
+			key code 51
+			delay 0.01
+		end repeat
+		keystroke site9pass
+		delay 0.5
+		
+		repeat 3 times
+			
+			keystroke tab
+			
+			delay 0.01
+			
+		end repeat
+		delay 0.01
+		keystroke return
+	end if
+	-- based on the opening sequence, there should be an "extra" tab. This gets rid of that puts you at the last site opened
+	keystroke tab using {control down, shift down}
+	delay 0.02
+	keystroke "w" using command down
+	
+	keystroke tab using {control down, shift down}
+end tell
+delay 3
