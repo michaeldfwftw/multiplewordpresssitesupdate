@@ -1,0 +1,61 @@
+-- Keep in mind this has to levels of repeat. Repeating 2x for 1x for each site so 9 sites is 18 runs. 
+delay 0.3
+-- we iterate through the entire process 2x so that we can update plugins and templates. This will fail to catch templates if there is an error thrown at plugin update, so that does have to ocassionally be checked manually. TO DO make this automated
+repeat 2 times
+	tell application "System Events"
+		--	This script opens the update page, determines if updates are available, and if so executes them. Repeated for number of sites
+		repeat 9 times
+			
+			keystroke "a" using command down
+			delay 0.5
+			keystroke "f" using command down
+			delay 0.5
+			keystroke "updat"
+			delay 0.5
+			key code 53
+			delay 0.5
+			keystroke return
+			delay 3.5
+			keystroke "a" using command down
+			delay 0.05
+			keystroke "f" using command down
+			delay 0.09
+			-- this 'cleanses the pallette' of the clipboard quickly
+			keystroke "you"
+			delay 0.09
+			key code 53
+			delay 0.03
+			keystroke "c" using command down
+			delay 0.1
+			keystroke "a" using command down
+			delay 0.1
+			keystroke "f" using command down
+			delay 1.5
+			-- select all will be available on this page only if updates are available; this is the test to determine if updates are performed
+			keystroke "select all"
+			delay 1
+			key code 53
+			delay 0.5
+			keystroke "c" using command down
+			delay 0.1
+			set checkthis to (the clipboard)
+			set thiz to "select all"
+			if checkthis = thiz then
+				keystroke tab using shift down
+				delay 1.5
+				key code 49
+				delay 1.5
+				keystroke tab using shift down
+				delay 1.5
+				key code 49
+			end if
+			delay 5
+			
+			
+			set test to "funk"
+			set thiz to "funk this"
+			delay 1
+			keystroke tab using {control down, shift down}
+		end repeat
+	end tell
+end repeat
